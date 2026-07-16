@@ -1,0 +1,6 @@
+{
+  "name": "Spanish-Armenian School Puzzle Quiz",
+  "description": "An interactive educational quiz game for learning Spanish with Armenian translations and a soccer ball puzzle that unlocks piece-by-piece with each correct answer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

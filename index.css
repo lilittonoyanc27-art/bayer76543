@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Fira+Mono&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "Fira Mono", monospace;
+  
+  --color-pitch: #15803d;
+  --color-grass-light: #22c55e;
+  --color-grass-dark: #15803d;
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+}
+
+/* Custom continuous shimmer / grass pattern */
+.grass-pattern {
+  background-color: #065f46;
+  background-image: 
+    linear-gradient(45deg, #0f766e 25%, transparent 25%), 
+    linear-gradient(-45deg, #0f766e 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, #0f766e 75%), 
+    linear-gradient(-45deg, transparent 75%, #0f766e 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+/* Sparkle animation */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s infinite;
+}
+
+/* Vibrant Palette Custom Themes */
+.vibrant-body {
+  background-color: #f0f9ff; /* Light sky blue */
+  background-image: radial-gradient(#d1fae5 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+.sidebar-vibrant {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border: 2px solid #10b981;
+}
+
+.puzzle-stadium-vibrant {
+  background: #064e3b;
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.6);
+}
+
+.option-btn-vibrant {
+  background-color: #ffffff;
+  border: 2px solid #d1fae5;
+  transition: all 0.2s ease-in-out;
+}
+
+.option-btn-vibrant:hover {
+  border-color: #10b981;
+  background-color: #f0fdf4;
+}
+
+.option-btn-correct {
+  background-color: #10b981 !important;
+  color: #ffffff !important;
+  border-color: #059669 !important;
+}
+
+.option-btn-wrong {
+  background-color: #ef4444 !important;
+  color: #ffffff !important;
+  border-color: #dc2626 !important;
+}
+
+/* Shake animation for locked tiles */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+.animate-shake {
+  animation: shake 0.2s ease-in-out 2;
+}
+
